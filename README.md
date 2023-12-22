@@ -1,0 +1,3 @@
+- To run this app you need to run the server in port 8080 and the client in port 4200.
+- Run mvn clean install and mvn spring-boot:run to run the server.
+- Run npm i and ng serve to run the client.
