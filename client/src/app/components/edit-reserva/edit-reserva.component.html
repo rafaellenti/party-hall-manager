@@ -1,0 +1,10 @@
+<div class="app-container info-container">
+    <h4 class="text-center mb-4">Dados da Reserva</h4>
+    <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" class="mb-4 d-flex flex-column align-items-center">
+        <div class="form-content d-flex justify-content-between w-75 mb-4">
+            <input formControlName="date" type="text" class="form-control input" placeholder="Data">
+            <input formControlName="residentName" type="text" class="form-control input" placeholder="Residente">
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="!reservaForm.valid">Editar Reserva</button>
+    </form>
+</div>

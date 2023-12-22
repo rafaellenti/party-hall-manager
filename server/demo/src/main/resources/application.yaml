@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/party_hall_manager
+    username: root
+    password: mysql123
+
+  jpa.hibernate.ddl_auto: none

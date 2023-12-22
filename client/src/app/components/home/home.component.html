@@ -1,0 +1,36 @@
+<div class="bank-accounts-container app-container">
+    <div class="text-center mb-4 mt-3">
+        <h3>Reservas</h3>
+        <button (click)="this.routingNavigationService.navigateToRoute(routesEnum.AddReserva)"
+            class="btn btn-primary mt-3">Criar</button>
+    </div>
+    <div *ngIf="this.reservaList.length == 0" class="d-flex justify-content-center">
+        <p class="fw-bold">Não há reservas</p>
+    </div>
+    <ng-container *ngIf="this.reservaList.length > 0">
+        <div class="table-scroll">
+            <table class="table">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">#</th>
+                        <th scope="col">Data</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let reserva of this.reservaList; let i = index" class="text-center table-roll">
+                        <th scope="row">{{i + 1}}</th>
+                        <td (click)="this.routingNavigationService.navigateToRoute(routesEnum.ReservaInfo, reserva.id)">
+                            {{ reserva.date }}</td>
+                        <td>
+                            <button
+                                (click)="this.routingNavigationService.navigateToRoute(routesEnum.EditReserva, reserva.id)"
+                                class='btn btn-primary edit-button'>Editar</button>
+                            <button (click)="deleteReserva(reserva.id)" class='btn btn-danger'>Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-container>
+</div>
